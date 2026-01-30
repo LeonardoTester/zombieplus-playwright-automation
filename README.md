@@ -7,7 +7,6 @@ Este repositório contém uma suíte de testes automatizados E2E para a aplicaç
 
 ## 🚀 Tecnologias
 * **Playwright**
-* **TypeScript**
 * **Docker & Docker Compose**
 * **PostgreSQL**
 
