@@ -1,5 +1,6 @@
 > 🚧 **Status do Projeto:** Em desenvolvimento (Work In Progress). 
 > Este repositório está sendo construído como parte de um estudo prático de automação com Playwright e Docker.
+> ---
 > ## 📈 Roadmap (O que estou fazendo)
 - [x] Configuração inicial do repositório no GitHub.
 - [/] Estruturação das pastas do projeto (`apps` e `projects`).
