@@ -19,7 +19,7 @@ test('The user must register a lead' , async ({ page }) => {
 
   /** await page.getByText('seus dados conosco').click() // técnica para pausar o elemento flutuante, é temporário. 
   const content = await page.content()
-  console.log(content) // abra o console dentro da interface e pegue o código HTML **/
+  console.log(content) // abra o console dentro da interface e use código HTML **/
 
   const message = 'Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato!'
 
@@ -27,5 +27,4 @@ test('The user must register a lead' , async ({ page }) => {
 
   await expect(page.locator('.toast')).toBeHidden({timeout: 5000})
 
-  await page.waitForTimeout(5000)
 });
