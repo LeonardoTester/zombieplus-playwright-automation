@@ -1,6 +1,6 @@
 const { expect } = require('@playwright/test');
 
-export class LadingPage {
+export class LandingPage {
 
     constructor(page) {
         this.page = page
@@ -8,7 +8,6 @@ export class LadingPage {
 
     async visit() {
         await this.page.goto('http://localhost:3000/')
-
     }
 
      async openLeadModal() {
@@ -17,7 +16,6 @@ export class LadingPage {
          await expect(
             this.page.getByTestId('modal').getByRole('heading') // checkpoint
          ).toHaveText('Fila de espera')
-        
     }
 
      async submitLeadForm(name, email) {
@@ -29,10 +27,15 @@ export class LadingPage {
     }
 
      async toastHaveText(message) {
+
+        const toast = this.page.locator('.toast')
          
-         await expect(this.page.locator('.toast')).toHaveText(message)
-         await expect(this.page.locator('.toast')).toBeHidden({timeout: 5000})
-        
+        await expect(toast).toHaveText(message)
+        await expect(toast).not.toBeVisible({timeout: 5000})
+    }
+
+    async alertHaveText(target) {
+        await expect(this.page.locator('.alert')).toHaveText(target)
     }
 
 }
