@@ -21,21 +21,19 @@ Este repositório contém uma suíte de testes automatizados E2E para a aplicaç
 
 ---
 
-## 🛠️ Guia de Configuração e Execução
-
-Para que os testes funcionem, o ambiente precisa ser preparado seguindo a ordem abaixo:
-
-# 🚀 Guia de Configuração do Ambiente
+# 🧟 ZombiePlus — Guia de Configuração com Playwright
 
 ---
 
 ## 1. Subir os Containers
 
-Dentro da pasta `apps/`, onde está o `docker-compose.yml`, execute:
+Na raiz do projeto, onde está o `docker-compose.yml`, execute:
 
 ```bash
 docker-compose up -d
 ```
+
+> Isso sobe dois containers: o banco de dados **PostgreSQL** (`pgdb`) e o gerenciador **pgAdmin**. O banco `zombieplus` já é criado automaticamente.
 
 ---
 
@@ -45,10 +43,10 @@ Abra o navegador e acesse: `http://localhost:16543`
 
 Faça login com as credenciais:
 
-| Campo | Valor           |
-| ----- | --------------- |
-| Email | admin@qax.com   |
-| Senha | pwd123          |
+| Campo | Valor         |
+| ----- | ------------- |
+| Email | admin@qax.com |
+| Senha | pwd123        |
 
 ---
 
@@ -58,18 +56,19 @@ Faça login com as credenciais:
 - Na aba **General**, defina o nome: `pgdb`
 - Na aba **Connection**, preencha os dados abaixo e salve:
 
-- | Campo    | Valor    |
-- | -------- | -------- |
-- | Host     | postgres |
-- | Username | postgres |
-- | Password | pwd123   |
+| Campo    | Valor    |
+| -------- | -------- |
+| Host     | database |
+| Username | postgres |
+| Password | pwd123   |
 
-> ✅ O banco `zombieplus` já estará disponível após salvar (criado pelo `db.sh`).
+> O host é `database` pois é o nome do serviço definido no `docker-compose.yml`.
+
 ---
 
 ## 4. Inicializar a API (Backend)
 
-Na pasta `apps/api/`, rode o script que conecta e inicializa o banco, depois suba o servidor:
+Na pasta `apps/api/`, rode o script que **recria as tabelas e popula o banco com seeds**, depois suba o servidor:
 
 ```bash
 cd apps/api
@@ -77,7 +76,8 @@ cd apps/api
 npm run dev
 ```
 
-> O `db.sh` conecta ao banco do Docker e configura as tabelas automaticamente.
+> ⚠️ O `db.sh` apaga todas as tabelas, recria e insere os dados iniciais. Não rode em produção.  
+> A API ficará disponível em: `http://localhost:3333`
 
 ---
 
