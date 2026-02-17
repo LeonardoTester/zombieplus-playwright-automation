@@ -52,17 +52,17 @@ Faça login com as credenciais:
 
 ---
 
-## 3. Criar o Servidor no pgAdmin
-
-1. Clique com o botão direito em **Servers** → **Register** → **Server**
-2. Na aba **General**, defina o nome: `pgdb`
 3. Na aba **Connection**, preencha:
+
+<br>
 
 | Campo    | Valor    |
 | -------- | -------- |
 | Host     | postgres |
 | Username | postgres |
 | Password | pwd123   |
+
+<br>
 
 4. Salve. O banco `zombieplus` já estará disponível (criado pelo `db.sh`).
 
