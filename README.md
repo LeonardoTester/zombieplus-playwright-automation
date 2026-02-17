@@ -25,58 +25,96 @@ Este repositório contém uma suíte de testes automatizados E2E para a aplicaç
 
 Para que os testes funcionem, o ambiente precisa ser preparado seguindo a ordem abaixo:
 
-markdown
-### 1. Subir os Containers
+# 🚀 Guia de Configuração do Ambiente
+
+---
+
+## 1. Subir os Containers
+
 Abra o terminal na pasta onde está o arquivo `docker-compose.yml` e execute:
+
 ```bash
 docker-compose up -d
-2. Configurar o pgAdmin
+```
+
+---
+
+## 2. Configurar o pgAdmin
+
 Acesse o gerenciador do banco de dados pelo navegador:
 
-URL: http://localhost:16543
-Login: 
+| Campo  | Valor                      |
+|--------|----------------------------|
+| URL    | http://localhost:16543     |
+| Login  | admin@qax.com              |
+| Senha  | pwd123                     |
 
-admin@qax.com
-Senha: pwd123
-3. Configurar o Servidor e Banco de Dados
+---
+
+## 3. Configurar o Servidor e Banco de Dados
+
 Dentro do painel do pgAdmin, realize as seguintes configurações:
 
-Criar Server:
+### Criar Server
 
-Clique com o botão direito em Servers -> Register -> Server.
-Nome: pgdb
-Configurar Conexão:
+Clique com o botão direito em **Servers** → **Register** → **Server**
 
-Na aba Connection, insira os dados do seu Docker:
-Username: postgres
-Password: pwd123
-Criar Database:
+- **Nome:** `pgdb`
 
-Clique com o botão direito em Databases -> Create -> Database.
-Nome: zombieplus (conforme exigido pelo Sequelize na API).
-4. Inicializar a API (Backend)
+### Configurar Conexão
+
+Na aba **Connection**, insira os dados do seu Docker:
+
+| Campo    | Valor      |
+|----------|------------|
+| Username | postgres   |
+| Password | pwd123     |
+
+### Criar Database
+
+Clique com o botão direito em **Databases** → **Create** → **Database**
+
+- **Nome:** `zombieplus` *(conforme exigido pelo Sequelize na API)*
+
+---
+
+## 4. Inicializar a API (Backend)
+
 Vá para a pasta da API para configurar as tabelas e subir o servidor:
 
-bash
+```bash
 cd apps/api
 ./db.sh
 npm run dev
-5. Inicializar o Front-end (Web)
+```
+
+---
+
+## 5. Inicializar o Front-end (Web)
+
 Em um novo terminal, entre na pasta web e suba o site:
 
-bash
+```bash
 cd apps/web
 npm run dev
-URL: http://localhost:3000
+```
 
-6. Executar os Testes Automatizados
-Com a aplicação e o banco ativos, abra um terceiro terminal para rodar o Playwright:
+> Acesse em: [http://localhost:3000](http://localhost:3000)
 
-bash
+---
+
+## 6. Executar os Testes Automatizados
+
+Com a aplicação e o banco ativos, abra um **terceiro terminal** para rodar o Playwright:
+
+```bash
 cd projects
 npm install
 npx playwright test
+```
 
-Desenvolvido por Leonardo 🚀
+---
 
+*Desenvolvido por Leonardo 🚀*
 
+*Desenvolvido por Leonardo 🚀*
