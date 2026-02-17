@@ -54,9 +54,9 @@ Faça login com as credenciais:
 
 ## 3. Criar o Servidor no pgAdmin
 
-1. Clique com o botão direito em **Servers** → **Register** → **Server**
-2. Na aba **General**, defina o nome: `pgdb`
-3. Na aba **Connection**, preencha os dados abaixo e salve:
+- Clique com o botão direito em **Servers** → **Register** → **Server**
+- Na aba **General**, defina o nome: `pgdb`
+- Na aba **Connection**, preencha os dados abaixo e salve:
 
 | Campo    | Valor    |
 | -------- | -------- |
