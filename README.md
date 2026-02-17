@@ -12,10 +12,12 @@ Este repositório contém uma suíte de testes automatizados E2E para a aplicaç
 
 ## 📈 Roadmap (O que estou fazendo)
 - [x] Configuração inicial do repositório no GitHub.
-- [ ] Estruturação das pastas do projeto (`apps` e `projects`).
-- [ ] Configuração do `docker-compose.yml` para subir Postgres e App.
-- [ ] Implementação dos primeiros testes de Login com Playwright.
-- [ ] Criação de Page Objects para a plataforma ZombiePlus.
+- [x] Estruturação das pastas do projeto (`apps` e `projects`).
+- [x] Configuração do `docker-compose.yml` para subir Postgres e App.
+- [x] Implementação dos primeiros testes de Login com Playwright.
+- [x] Criação de Page Objects para a plataforma ZombiePlus.
+- [x] Implementação de testes de Landing Page (Leads).
+- [x] Criação de componentes compartilhados (Toast).
 
 ---
 Desenvolvido por **Leonardo** 🚀
