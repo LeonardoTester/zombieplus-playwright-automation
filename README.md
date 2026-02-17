@@ -31,7 +31,7 @@ Para que os testes funcionem, o ambiente precisa ser preparado seguindo a ordem 
 
 ## 1. Subir os Containers
 
-Abra o terminal na pasta onde está o arquivo `docker-compose.yml` e execute:
+Dentro da pasta `apps/`, onde está o `docker-compose.yml`, execute:
 
 ```bash
 docker-compose up -d
@@ -39,48 +39,42 @@ docker-compose up -d
 
 ---
 
-## 2. Configurar o pgAdmin
+## 2. Acessar o pgAdmin
 
-Acesse o gerenciador do banco de dados pelo navegador:
+Abra o navegador e acesse:
 
-| Campo  | Valor                      |
-|--------|----------------------------|
-| URL    | http://localhost:16543     |
-| Login  | admin@qax.com              |
-| Senha  | pwd123                     |
+```
+http://localhost:16543
+```
+
+Faça login com as credenciais:
+
+| Campo | Valor         |
+|-------|---------------|
+| Email | admin@qax.com |
+| Senha | pwd123        |
 
 ---
 
-## 3. Configurar o Servidor e Banco de Dados
+## 3. Criar o Servidor no pgAdmin
 
-Dentro do painel do pgAdmin, realize as seguintes configurações:
-
-### Criar Server
-
-Clique com o botão direito em **Servers** → **Register** → **Server**
-
-- **Nome:** `pgdb`
-
-### Configurar Conexão
-
-Na aba **Connection**, insira os dados do seu Docker:
+1. Clique com o botão direito em **Servers** → **Register** → **Server**
+2. Na aba **General**, defina o nome: `pgdb`
+3. Na aba **Connection**, preencha:
 
 | Campo    | Valor      |
 |----------|------------|
+| Host     | postgres   |
 | Username | postgres   |
 | Password | pwd123     |
 
-### Criar Database
-
-Clique com o botão direito em **Databases** → **Create** → **Database**
-
-- **Nome:** `zombieplus` *(conforme exigido pelo Sequelize na API)*
+4. Salve. O banco `zombieplus` já estará disponível (criado pelo `db.sh`).
 
 ---
 
 ## 4. Inicializar a API (Backend)
 
-Vá para a pasta da API para configurar as tabelas e subir o servidor:
+Na pasta `apps/api/`, rode o script que conecta e inicializa o banco, depois suba o servidor:
 
 ```bash
 cd apps/api
@@ -88,11 +82,13 @@ cd apps/api
 npm run dev
 ```
 
+> O `db.sh` conecta ao banco do Docker e configura as tabelas automaticamente.
+
 ---
 
-## 5. Inicializar o Front-end (Web)
+## 5. Inicializar o Front-end
 
-Em um novo terminal, entre na pasta web e suba o site:
+Em um **novo terminal**, na pasta `apps/web/`, suba o front-end:
 
 ```bash
 cd apps/web
@@ -103,9 +99,9 @@ npm run dev
 
 ---
 
-## 6. Executar os Testes Automatizados
+## 6. Executar os Testes com Playwright
 
-Com a aplicação e o banco ativos, abra um **terceiro terminal** para rodar o Playwright:
+Com Docker, API e front-end ativos, abra um **terceiro terminal** e vá até a pasta `projects/`, onde estão as specs do Playwright:
 
 ```bash
 cd projects
@@ -116,4 +112,3 @@ npx playwright test
 ---
 
 *Desenvolvido por Leonardo 🚀*
-
