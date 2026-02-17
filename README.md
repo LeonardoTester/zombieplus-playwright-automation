@@ -33,7 +33,7 @@ docker-compose up -d
 ### 2. Configurar o pgAdmin
 Acesse o gerenciador do banco de dados pelo navegador:
 
-* **URL:** http://localhost:16543
+* *URL:* http://localhost:16543
 * **Login:** admin@qax.com
 * **Senha:** pwd123
 
