@@ -117,4 +117,3 @@ npx playwright test
 
 *Desenvolvido por Leonardo 🚀*
 
-*Desenvolvido por Leonardo 🚀*
