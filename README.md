@@ -67,8 +67,6 @@ Faça login com as credenciais:
  | Username | postgres   |
  | Password | pwd123     |
 
-4. Salve. O banco `zombieplus` já estará disponível (criado pelo `db.sh`).
-
 ---
 
 ## 4. Inicializar a API (Backend)
