@@ -44,7 +44,6 @@ Abra o navegador e acesse: `http://localhost:16543`
 Faça login com as credenciais:
 
 | Campo | Valor         |
-| ----- | ------------- |
 | Email | admin@qax.com |
 | Senha | pwd123        |
 
