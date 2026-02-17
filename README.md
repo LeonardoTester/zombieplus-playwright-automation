@@ -56,10 +56,11 @@ Faça login com as credenciais:
 - Na aba **General**, defina o nome: `pgdb`
 - Na aba **Connection**, preencha os dados abaixo e salve:
 
-   | Campo    | Valor    |
-   | Host     | database |
-   | Username | postgres |
-   | Password | pwd123   |
+| Campo    | Valor    |
+| -------- | -------- |
+| Host     | database |
+| Username | postgres |
+| Password | pwd123   |
 
 > O host é `database` pois é o nome do serviço definido no `docker-compose.yml`.
 
