@@ -41,17 +41,14 @@ docker-compose up -d
 
 ## 2. Acessar o pgAdmin
 
-Abra o navegador e acesse:
-
-```
-http://localhost:16543
-```
+Abra o navegador e acesse: `http://localhost:16543`
 
 Faça login com as credenciais:
 
- | Campo | Valor         |
- |-------|---------------|
- | Senha | pwd123        |
+| Campo | Valor           |
+| ----- | --------------- |
+| Email | admin@qax.com   |
+| Senha | pwd123          |
 
 ---
 
@@ -61,11 +58,13 @@ Faça login com as credenciais:
 2. Na aba **General**, defina o nome: `pgdb`
 3. Na aba **Connection**, preencha:
 
- | Campo    | Valor      |
- |----------|------------|
- | Host     | postgres   |
- | Username | postgres   |
- | Password | pwd123     |
+| Campo    | Valor    |
+| -------- | -------- |
+| Host     | postgres |
+| Username | postgres |
+| Password | pwd123   |
+
+4. Salve. O banco `zombieplus` já estará disponível (criado pelo `db.sh`).
 
 ---
 
